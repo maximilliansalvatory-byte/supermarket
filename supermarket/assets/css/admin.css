@@ -1,0 +1,173 @@
+/* FreshCart Supermarket Premium Admin Styling */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --admin-sidebar-bg: #0f172a;
+    --admin-sidebar-hover: #1e293b;
+    --admin-primary: #198754;
+    --admin-light-bg: #f1f5f9;
+    --admin-card-bg: #ffffff;
+    --admin-text-main: #334155;
+    --admin-text-muted: #64748b;
+    --admin-border: #e2e8f0;
+}
+
+[data-theme="dark"] {
+    --admin-light-bg: #0b0f19;
+    --admin-card-bg: #131926;
+    --admin-text-main: #f1f5f9;
+    --admin-text-muted: #94a3b8;
+    --admin-border: #1e293b;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--admin-light-bg);
+    color: var(--admin-text-main);
+    transition: background-color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Administrative Sidebar */
+.admin-sidebar {
+    background-color: var(--admin-sidebar-bg);
+    color: #ffffff;
+    min-height: 100vh;
+    width: 260px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-sidebar-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #10b981 0%, #198754 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    margin: 4px 12px;
+}
+
+.admin-nav-link:hover, .admin-nav-link.active {
+    background-color: var(--admin-sidebar-hover);
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.admin-nav-link.active {
+    background-color: var(--admin-primary);
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.25);
+}
+
+/* Administrative Workspace Container */
+.admin-workspace {
+    margin-left: 260px;
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .admin-sidebar {
+        margin-left: -260px;
+    }
+    .admin-sidebar.show {
+        margin-left: 0;
+    }
+    .admin-workspace {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Top Stats Card layout */
+.stat-card-gradient {
+    border-radius: 16px;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+}
+
+.stat-card-gradient:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Glass panel */
+.admin-glass-card {
+    background-color: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Custom Table design */
+.admin-table {
+    background-color: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.admin-table th {
+    background-color: rgba(0, 0, 0, 0.02);
+    font-weight: 700;
+    color: var(--admin-text-muted);
+    border-bottom: 1px solid var(--admin-border);
+    padding: 15px;
+}
+
+[data-theme="dark"] .admin-table th {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--admin-border);
+    color: var(--admin-text-main);
+}
+
+/* Admin quick action buttons */
+.btn-admin-action {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.btn-admin-action:hover {
+    transform: scale(1.1);
+}
+
+/* Circle Icon markers */
+.admin-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
